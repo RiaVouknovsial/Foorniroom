@@ -18,7 +18,7 @@ namespace Foorniroom.Controllers
         [HttpGet]
         public IActionResult GetMessage()
         {
-            var message = _newService.GetMessage();
+            var message = _newService.GetGreeting();
             return Ok(message);
         }
     }
