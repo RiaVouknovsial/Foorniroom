@@ -1,14 +1,19 @@
 ﻿using Foorniroom.Interfaces;
-using Foorniroom.Services;
 
 namespace Foorniroom.Services
 {
-        public class NewService : INewService
-{
-    public string GetMessage()
+    public class NewService : INewService
     {
-        return "I am new service";
+        private readonly IHelloRepository _helloRepository;
+
+        public NewService(IHelloRepository helloRepository)
+        {
+            _helloRepository = helloRepository;
+        }
+
+        public string GetGreeting()
+        {
+            return _helloRepository.GetMessage();
+        }
     }
 }
-}
-

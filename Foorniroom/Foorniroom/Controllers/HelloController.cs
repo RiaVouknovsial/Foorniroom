@@ -3,19 +3,21 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Foorniroom.Controllers
 {
-    public class HelloController : ControllerBase
+    [ApiController]
+    [Route("api/[controller]")]
+    public class HomeController : ControllerBase
     {
         private readonly INewService _newService;
 
-        public HelloController(INewService newService)
+        public HomeController(INewService newService)
         {
             _newService = newService;
         }
 
-        [HttpGet]
-        public IActionResult GetMessage()
+        [HttpGet("greeting")]
+        public IActionResult GetGreeting()
         {
-            var message = _newService.GetMessage();
+            var message = _newService.GetGreeting();
             return Ok(message);
         }
     }

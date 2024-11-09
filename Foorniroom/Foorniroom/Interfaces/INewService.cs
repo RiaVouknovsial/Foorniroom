@@ -2,6 +2,7 @@
 {
     public interface INewService
     {
-        string GetMessage();
+        string GetGreeting();
+      
     }
 }
