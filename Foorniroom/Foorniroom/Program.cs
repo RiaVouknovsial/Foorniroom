@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddScoped<INewService, NewService>();
 builder.Services.AddScoped<IHelloRepository, HelloRepository>();
+builder.Services.AddScoped<IValueRepository, ValueRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
